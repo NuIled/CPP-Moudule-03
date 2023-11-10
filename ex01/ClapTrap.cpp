@@ -6,7 +6,7 @@
 /*   By: aoutifra <aoutifra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:11:14 by aoutifra          #+#    #+#             */
-/*   Updated: 2023/11/10 02:13:18 by aoutifra         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:00:38 by aoutifra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,14 @@
 ClapTrap::ClapTrap():Name("default"),Hit_point(10),Damage(0),Energy(10){
     Log("ClapTrap Constructor Called")
 };
-ClapTrap::ClapTrap(const std::string &name):Name(name),Hit_point(10),Damage(0),Energy(10){
-    Log("ClapTrap Constructor Called")
-};
 
-ClapTrap::ClapTrap(const std::string &name, unsigned int Damage,unsigned int Energy,unsigned int Hit_point)
-:Name(name),Hit_point(Hit_point),Damage(Damage),Energy(Energy){
+ClapTrap::ClapTrap(const std::string &name):Name(name){
     Log("ClapTrap Constructor Called")
 };
 
 ClapTrap::~ClapTrap(){
     Log("ClapTrap Destructor Called")
 };
-
-std::string&  ClapTrap::get_name()
-{
-    return this->Name;   
-}
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &obj){
     if(this != &obj)
@@ -53,6 +44,7 @@ void ClapTrap::takeDamage(unsigned int amount)
         {
             this->Hit_point -= amount;
             this->Energy--;
+            Log("ClapTrap " << this->Name << " Take " << amount << " points of Damage!");
         }
 }
 
@@ -62,6 +54,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     {
         this->Hit_point+=amount;   
         this->Energy--;
+        Log("ClapTrap " << this->Name << " Repaired " << amount << " points of Hit_point!");
     }
 }
 

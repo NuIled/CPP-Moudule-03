@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/Users/aoutifra/Desktop/CPP-Moudule-03/ex01",
-      "program": "/Users/aoutifra/Desktop/CPP-Moudule-03/ex01/ClapTrap",
+      "program": "/Users/aoutifra/Desktop/CPP-Moudule-03/ex01/build/Debug/outDebug",
       "MIMode": "lldb",
       "miDebuggerPath": "lldb",
       "setupCommands": [
